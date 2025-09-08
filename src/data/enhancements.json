@@ -1,0 +1,170 @@
+{
+  "move1": {
+    "name": "+1 Move",
+    "baseCost": 30,
+    "marks": ["square", "circle", "diamond", "diamondPlus"],
+    "requiredAbilityTypes": ["move"]
+  },
+  "attack1": {
+    "name": "+1 Attack",
+    "baseCost": 50,
+    "marks": ["square", "circle", "diamond", "diamondPlus"],
+    "requiredAbilityTypes": ["attack"]
+  },
+  "range1": {
+    "name": "+1 Range",
+    "baseCost": 30,
+    "marks": ["square", "circle", "diamond", "diamondPlus"],
+    "requiredAbilityTypes": ["attack", "heal", "special"],
+    "requiredAbilityProperties": ["range"]
+  },
+  "target1": {
+    "name": "+1 Target",
+    "baseCost": 75,
+    "marks": ["square", "circle", "diamond", "diamondPlus"],
+    "requiredAbilityTypes": ["attack", "heal", "special"],
+    "requiredAbilityProperties": ["target"]
+  },
+  "shield1": {
+    "name": "+1 Shield",
+    "baseCost": 80,
+    "marks": ["square", "circle", "diamond", "diamondPlus"],
+    "requiredAbilityTypes": ["shield"]
+  },
+  "retaliate1": {
+    "name": "+1 Retaliate",
+    "baseCost": 60,
+    "marks": ["square", "circle", "diamond", "diamondPlus"],
+    "requiredAbilityTypes": ["retaliate"]
+  },
+  "pierce1": {
+    "name": "+1 Pierce",
+    "baseCost": 30,
+    "marks": ["square", "circle", "diamond", "diamondPlus"],
+    "requiredAbilityTypes": ["attack"],
+    "requiredAbilityProperties": ["pierce"]
+  },
+  "heal1": {
+    "name": "+1 Heal",
+    "baseCost": 30,
+    "marks": ["square", "circle", "diamond", "diamondPlus"],
+    "requiredAbilityTypes": ["heal"]
+  },
+  "push1": {
+    "name": "+1 Push",
+    "baseCost": 30,
+    "marks": ["square", "circle", "diamond", "diamondPlus"],
+    "requiredAbilityTypes": ["attack", "special"],
+    "requiredAbilityProperties": ["push"]
+  },
+  "pull1": {
+    "name": "+1 Pull",
+    "baseCost": 20,
+    "marks": ["square", "circle", "diamond", "diamondPlus"],
+    "requiredAbilityTypes": ["attack", "special"],
+    "requiredAbilityProperties": ["pull"]
+  },
+  "teleport1": {
+    "name": "+1 Teleport",
+    "baseCost": 50,
+    "marks": ["square", "circle", "diamond", "diamondPlus"],
+    "requiredAbilityTypes": ["teleport"]
+  },
+  "summonHp1": {
+    "name": "+1 Summon HP",
+    "baseCost": 40,
+    "marks": ["square", "circle", "diamond", "diamondPlus"],
+    "requiredAbilityTypes": ["summon"]
+  },
+  "summonMove1": {
+    "name": "+1 Summon Move",
+    "baseCost": 60,
+    "marks": ["square", "circle", "diamond", "diamondPlus"],
+    "requiredAbilityTypes": ["summon"]
+  },
+  "summonAttack1": {
+    "name": "+1 Summon Attack",
+    "baseCost": 100,
+    "marks": ["square", "circle", "diamond", "diamondPlus"],
+    "requiredAbilityTypes": ["summon"]
+  },
+  "summonRange1": {
+    "name": "+1 Summon Range",
+    "baseCost": 50,
+    "marks": ["square", "circle", "diamond", "diamondPlus"],
+    "requiredAbilityTypes": ["summon"]
+  },
+  "ward": {
+    "name": "Ward",
+    "baseCost": 75,
+    "marks": ["diamondPlus"],
+    "requiredAbilityTypes": ["attack", "move", "heal", "special"]
+  },
+  "strengthen": {
+    "name": "Strengthen",
+    "baseCost": 100,
+    "marks": ["diamondPlus"],
+    "requiredAbilityTypes": ["attack", "move", "heal", "special"]
+  },
+  "bless": {
+    "name": "Bless",
+    "baseCost": 75,
+    "marks": ["diamondPlus"],
+    "requiredAbilityTypes": ["attack", "move", "heal", "special"]
+  },
+  "wound": {
+    "name": "Wound",
+    "baseCost": 75,
+    "marks": ["diamond"],
+    "requiredAbilityTypes": ["attack", "special"]
+  },
+  "poison": {
+    "name": "Poison",
+    "baseCost": 50,
+    "marks": ["diamond"],
+    "requiredAbilityTypes": ["attack", "special"]
+  },
+  "immobilize": {
+    "name": "Immobilize",
+    "baseCost": 150,
+    "marks": ["diamond"],
+    "requiredAbilityTypes": ["attack", "special"]
+  },
+  "muddle": {
+    "name": "Muddle",
+    "baseCost": 40,
+    "marks": ["diamond"],
+    "requiredAbilityTypes": ["attack", "special"]
+  },
+  "curse": {
+    "name": "Curse",
+    "baseCost": 150,
+    "marks": ["diamond"],
+    "requiredAbilityTypes": ["attack", "special"]
+  },
+  "element": {
+    "name": "Element",
+    "baseCost": 100,
+    "marks": ["circle"],
+    "requiredAbilityTypes": ["attack", "move", "heal", "special"]
+  },
+  "wildElement": {
+    "name": "Wild Element",
+    "baseCost": 150,
+    "marks": ["circle"],
+    "requiredAbilityTypes": ["attack", "move", "heal", "special"]
+  },
+  "jump": {
+    "name": "Jump",
+    "baseCost": 60,
+    "marks": ["square"],
+    "requiredAbilityTypes": ["move"]
+  },
+  "areaHex": {
+    "name": "Area-of-Effect Hex",
+    "baseCost": 200,
+    "marks": ["hex"],
+    "special": "dividedByHexes",
+    "requiredAbilityTypes": ["attack", "heal", "special"]
+  }
+}

@@ -1,0 +1,20 @@
+[
+  { "id": "BR", "color": "#16395A", "name": "Bruiser", "icon": "template" },
+  { "id": "CH", "color": "#656A33", "name": "Cragheart", "icon": "template" },
+  { "id": "MT", "color": "#374458", "name": "Mindthief", "icon": "template" },
+  { "id": "SC", "color": "#2F4C2A", "name": "SilentKnife", "icon": "template" },
+  { "id": "SW", "color": "#583D72", "name": "Spellweaver", "icon": "template" },
+  { "id": "TI", "color": "#6C5A45", "name": "Tinkerer", "icon": "template" },
+  { "id": "BE", "color": "#71382F", "name": "Lightning Bolts", "icon": "template" },
+  { "id": "BS", "color": "#403129", "name": "Crossed Swords", "icon": "template" },
+  { "id": "DS", "color": "#3D7584", "name": "Angry Face", "icon": "template" },
+  { "id": "EL", "color": "#474747", "name": "Triangles", "icon": "template" },
+  { "id": "NS", "color": "#49475F", "name": "Eclipse", "icon": "template" },
+  { "id": "PH", "color": "#31514E", "name": "Cthulhu", "icon": "template" },
+  { "id": "QM", "color": "#815527", "name": "Three Spears", "icon": "template" },
+  { "id": "SB", "color": "#3E3E3E", "name": "Saw", "icon": "template" },
+  { "id": "SK", "color": "#7E6C34", "name": "Sun", "icon": "template" },
+  { "id": "SS", "color": "#75524E", "name": "Music Note", "icon": "template" },
+  { "id": "ST", "color": "#713B5C", "name": "Circles", "icon": "template" },
+  { "id": "WF", "color": "#634031", "name": "Two Minis", "icon": "template" }
+]

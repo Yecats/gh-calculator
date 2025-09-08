@@ -1,0 +1,428 @@
+{
+  "cards": {
+    "empathetic-assault": {
+      "name": "Empathetic Assault",
+      "level": 1,
+      "image": "empathetic-assault.jpg",
+      "enhancementSpots": [
+        {
+          "id": "ea-top-1",
+          "type": "square",
+          "description": "Attack 12",
+          "x": 50,
+          "y": 30,
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": true,
+          "abilityTypes": ["attack"],
+          "abilityProperties": []
+        },
+        {
+          "id": "ea-bottom-1",
+          "type": "circle",
+          "description": "Heal 2",
+          "x": 50,
+          "y": 70,
+          "region": "bottom",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilityTypes": ["heal"],
+          "abilityProperties": []
+        }
+      ]
+    },
+    "frigid-apparition": {
+      "name": "Frigid Apparition",
+      "level": 1,
+      "image": "frigid-apparition.jpg",
+      "enhancementSpots": [
+        {
+          "id": "fa-top-1",
+          "type": "circle",
+          "description": "Ice element",
+          "x": 40,
+          "y": 25,
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilityTypes": ["special"],
+          "abilityProperties": []
+        },
+        {
+          "id": "fa-top-2",
+          "type": "square",
+          "description": "Attack 10",
+          "x": 50,
+          "y": 40,
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilityTypes": ["attack"],
+          "abilityProperties": []
+        },
+        {
+          "id": "fa-bottom-1",
+          "type": "diamond",
+          "description": "Move 2",
+          "x": 40,
+          "y": 65,
+          "region": "bottom",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilityTypes": ["move"],
+          "abilityProperties": []
+        },
+        {
+          "id": "fa-bottom-2",
+          "type": "circle",
+          "description": "Ice element",
+          "x": 40,
+          "y": 75,
+          "region": "bottom",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilityTypes": ["special"],
+          "abilityProperties": []
+        }
+      ]
+    },
+    "hidden-in-the-shadows": {
+      "name": "Hidden in the Shadows",
+      "level": 1,
+      "image": "hidden-in-the-shadows.jpg",
+      "enhancementSpots": [
+        {
+          "id": "hits-top-1",
+          "type": "diamond",
+          "description": "Attack 3",
+          "x": 50,
+          "y": 40,
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilityTypes": ["attack"],
+          "abilityProperties": []
+        },
+        {
+          "id": "hits-top-2",
+          "type": "diamondPlus",
+          "description": "Self Condition",
+          "x": 50,
+          "y": 70,
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilityTypes": ["special"],
+          "abilityProperties": []
+        }
+      ]
+    },
+    "perverse-edge": {
+      "name": "Perverse Edge",
+      "level": 1,
+      "image": "perverse-edge.jpg",
+      "enhancementSpots": [
+        {
+          "id": "pe-top-1",
+          "type": "diamond",
+          "description": "Attack 3",
+          "x": 50,
+          "y": 40,
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": true,
+          "abilityTypes": ["attack"],
+          "abilityProperties": []
+        },
+        {
+          "id": "pe-bottom-1",
+          "type": "square",
+          "description": "Move 3",
+          "x": 50,
+          "y": 70,
+          "region": "bottom",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilityTypes": ["move"],
+          "abilityProperties": []
+        }
+      ]
+    },
+    "pilfer": {
+      "name": "Pilfer",
+      "level": 1,
+      "image": "pilfer.jpg",
+      "enhancementSpots": [
+        {
+          "id": "p-top-1",
+          "type": "square",
+          "description": "Attack 79",
+          "x": 50,
+          "y": 40,
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": true,
+          "abilityTypes": ["attack"],
+          "abilityProperties": ["range"]
+        },
+        {
+          "id": "p-bottom-1",
+          "type": "diamond",
+          "description": "Move 4",
+          "x": 50,
+          "y": 70,
+          "region": "bottom",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilityTypes": ["move"],
+          "abilityProperties": []
+        }
+      ]
+    },
+    "psychic-blade": {
+      "name": "Psychic Blade",
+      "level": 1,
+      "image": "psychic-blade.jpg",
+      "enhancementSpots": [
+        {
+          "id": "pb-top-1",
+          "type": "diamond",
+          "description": "Move 3",
+          "x": 40,
+          "y": 30,
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilityTypes": ["move"],
+          "abilityProperties": []
+        },
+        {
+          "id": "pb-top-2",
+          "type": "square",
+          "description": "Control attack 1",
+          "x": 50,
+          "y": 45,
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilityTypes": ["attack"],
+          "abilityProperties": ["range", "target"]
+        },
+        {
+          "id": "pb-bottom-1",
+          "type": "diamond",
+          "description": "Move 3",
+          "x": 50,
+          "y": 70,
+          "region": "bottom",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilityTypes": ["move"],
+          "abilityProperties": []
+        }
+      ]
+    },
+    "scurry": {
+      "name": "Scurry",
+      "level": 1,
+      "image": "scurry.jpg",
+      "enhancementSpots": [
+        {
+          "id": "s-top-1",
+          "type": "diamond",
+          "description": "Move 3",
+          "x": 50,
+          "y": 30,
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilityTypes": ["move"],
+          "abilityProperties": []
+        },
+        {
+          "id": "s-top-2",
+          "type": "diamond",
+          "description": "Move 2",
+          "x": 50,
+          "y": 40,
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilityTypes": ["move"],
+          "abilityProperties": []
+        },
+        {
+          "id": "s-bottom-1",
+          "type": "square",
+          "description": "Attack 20",
+          "x": 50,
+          "y": 65,
+          "region": "bottom",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": true,
+          "abilityTypes": ["attack"],
+          "abilityProperties": ["pierce", "push"]
+        }
+      ]
+    },
+    "submissive-affliction": {
+      "name": "Submissive Affliction",
+      "level": 1,
+      "image": "submissive-affliction.jpg",
+      "enhancementSpots": [
+        {
+          "id": "sa-top-1",
+          "type": "diamond",
+          "description": "Move 2",
+          "x": 50,
+          "y": 30,
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilityTypes": ["move"],
+          "abilityProperties": []
+        },
+        {
+          "id": "sa-bottom-1",
+          "type": "square",
+          "description": "Control attack 1",
+          "x": 50,
+          "y": 70,
+          "region": "bottom",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilityTypes": ["attack"],
+          "abilityProperties": ["range"]
+        }
+      ]
+    },
+    "feedback-loop": {
+      "name": "Feedback Loop",
+      "level": 1,
+      "image": "mindthief-feedback-loop.jpg",
+      "enhancementSpots": [
+        {
+          "id": "top-summon-1",
+          "type": "circle",
+          "description": "Top action: Grant summon enhancement",
+          "x": 25,
+          "y": 35,
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilityTypes": ["special"],
+          "abilityProperties": []
+        },
+        {
+          "id": "bottom-move",
+          "type": "square",
+          "description": "Bottom action: Move 4",
+          "x": 15,
+          "y": 85,
+          "region": "bottom",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilityTypes": ["move"],
+          "abilityProperties": []
+        },
+        {
+          "id": "bottom-wound",
+          "type": "diamondPlus",
+          "description": "Bottom action: Wound effect",
+          "x": 85,
+          "y": 95,
+          "region": "bottom",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilityTypes": ["special"],
+          "abilityProperties": []
+        }
+      ]
+    },
+    "gnawing-horde": {
+      "name": "Gnawing Horde",
+      "level": "X",
+      "image": "mindthief-gnawing-horde.jpg",
+      "enhancementSpots": [
+        {
+          "id": "top-summon-hp",
+          "type": "square",
+          "description": "Summon HP: 5",
+          "x": 45,
+          "y": 40,
+          "region": "top",
+          "isSummon": true,
+          "targets": 1,
+          "hasLostIcon": true,
+          "allowedSummonEnhancements": ["summonHp1"],
+          "abilityTypes": ["summon"],
+          "abilityProperties": []
+        },
+        {
+          "id": "top-summon-move",
+          "type": "square",
+          "description": "Summon Move: 2",
+          "x": 65,
+          "y": 40,
+          "region": "top",
+          "isSummon": true,
+          "targets": 1,
+          "hasLostIcon": true,
+          "allowedSummonEnhancements": ["summonMove1"],
+          "abilityTypes": ["summon"],
+          "abilityProperties": []
+        },
+        {
+          "id": "top-summon-attack",
+          "type": "square",
+          "description": "Summon Attack: 2",
+          "x": 25,
+          "y": 50,
+          "region": "top",
+          "isSummon": true,
+          "targets": 1,
+          "hasLostIcon": true,
+          "allowedSummonEnhancements": ["summonAttack1"],
+          "abilityTypes": ["summon"],
+          "abilityProperties": []
+        },
+        {
+          "id": "bottom-move",
+          "type": "square",
+          "description": "Move 4",
+          "x": 75,
+          "y": 90,
+          "region": "bottom",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": true,
+          "abilityTypes": ["move"],
+          "abilityProperties": []
+        }
+      ]
+    }
+  }
+}
