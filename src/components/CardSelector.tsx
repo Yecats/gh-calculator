@@ -60,7 +60,7 @@ export function CardSelector({
                         onCardSelect(key)
                         onCardSelectOpenChange(false)
                       }}
-                      className="py-3 px-4 hover:bg-muted/40 focus:bg-muted/40 text-muted-foreground cursor-pointer"
+                      className="py-3 px-4 hover:border-accent hover:border-2 focus:border-accent focus:border-2 data-[selected=true]:border-accent data-[selected=true]:border-2 border-2 border-transparent text-muted-foreground cursor-pointer rounded-lg"
                     >
                       <Check className={`mr-2 h-4 w-4 ${selectedCard === key ? "opacity-100" : "opacity-0"}`} />
                       <div className="flex items-center justify-between w-full min-w-0">
@@ -72,7 +72,7 @@ export function CardSelector({
                     </CommandItem>
                   ))
                 ) : (
-                  <CommandItem className="py-3 px-4 hover:bg-muted/40 focus:bg-muted/40 text-muted-foreground">
+                  <CommandItem className="py-3 px-4 hover:border-accent hover:border-2 focus:border-accent focus:border-2 data-[selected=true]:border-accent data-[selected=true]:border-2 border-2 border-transparent text-muted-foreground rounded-lg">
                     <div className="flex items-center justify-between w-full">
                       <span className="mr-4">No cards available yet</span>
                       <Badge variant="secondary" className="rounded-full text-xs bg-accent text-accent-foreground">Level 1</Badge>
