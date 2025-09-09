@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Calculator, ArrowCounterClockwise } from '@phosphor-icons/react'
+import { Calculate as Calculator, Refresh as ArrowCounterClockwise } from '@mui/icons-material'
 import { Card, EnhancementSpot } from '@/types'
 
 interface CostModifiersProps {
@@ -54,7 +54,7 @@ export function CostModifiers({
       {/* Header */}
       <div className="flex items-center gap-3">
         <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center">
-          <Calculator className="text-accent-foreground" size={16} />
+          <Calculator className="text-white" fontSize="small" />
         </div>
         <label className="text-sm font-medium">Cost Modifiers</label>
       </div>
@@ -218,7 +218,7 @@ export function CostModifiers({
             size="sm"
             className="w-auto bg-accent text-black hover:bg-accent/90 border-0 px-[10px]"
           >
-            <ArrowCounterClockwise size={16} className="mr-2" />
+            <ArrowCounterClockwise fontSize="small" className="mr-2" />
             Reset
           </Button>
         </div>

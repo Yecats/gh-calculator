@@ -29,17 +29,8 @@ export function EnhancementStickers({
 
   return (
     <div className="space-y-6">
-      {/* Header with Mark Restrictions */}
+      {/* Mark Restrictions */}
       <Collapsible open={showMarkRestrictions} onOpenChange={onShowMarkRestrictionsChange}>
-        <div className="flex items-center gap-3">
-          <span className="text-xl font-semibold">Enhancements</span>
-          <CollapsibleTrigger asChild>
-            <Button variant="ghost" size="sm" className="p-2 h-8 w-8 rounded-full bubble-button">
-              <Question size={16} />
-            </Button>
-          </CollapsibleTrigger>
-        </div>
-
         {/* Mark Restrictions Content */}
         <CollapsibleContent>
           <Alert className="mt-3 rounded-lg border-2 glass-card">
@@ -56,13 +47,13 @@ export function EnhancementStickers({
       </Collapsible>
 
       {/* Enhancement Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3">
+      <div className="flex flex-wrap justify-center gap-3">
         {availableEnhancements.map(([key, enhancement]) => (
           <Button
             key={key}
             variant="outline"
             onClick={() => onEnhancementSelect(key)}
-            className="h-auto p-4 flex-col gap-2 text-xs rounded-lg bubble-button border-2 hover:text-accent transition-colors"
+            className="h-auto p-4 flex-col gap-2 text-xs rounded-lg bubble-button border-2 hover:text-accent transition-colors w-28 flex-shrink-0"
             size="sm"
             style={{
               borderColor: selectedEnhancement === key ? 'oklch(0.68 0.15 140)' : undefined

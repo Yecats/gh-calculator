@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
-import { Minus, ArrowClockwise, Coins } from '@phosphor-icons/react'
+import { Remove, Refresh, Toll } from '@mui/icons-material'
 import { EnhancementItem } from '@/types'
 import markTypes from '@/data/mark-types.json'
 import enhancements from '@/data/enhancements.json'
@@ -27,7 +27,7 @@ export function EnhancementList({ enhancementList, onRemoveItem, onClearAll }: E
         <div className="flex items-center justify-between">
           <CardTitle className="flex items-center gap-3 text-xl">
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center">
-              <Coins className="text-accent-foreground" size={20} />
+              <Toll style={{ fontSize: 20, color: 'white' }} />
             </div>
             Enhancement List
           </CardTitle>
@@ -37,7 +37,7 @@ export function EnhancementList({ enhancementList, onRemoveItem, onClearAll }: E
             onClick={onClearAll}
             className="flex items-center gap-2 rounded-lg bubble-button border-2 bg-accent border-accent text-white hover:bg-accent/90 hover:border-accent/90"
           >
-            <ArrowClockwise size={16} />
+            <Refresh style={{ fontSize: 16 }} />
             Clear All
           </Button>
         </div>
@@ -75,7 +75,7 @@ export function EnhancementList({ enhancementList, onRemoveItem, onClearAll }: E
                 onClick={() => onRemoveItem(item.id)}
                 className="rounded-full bubble-button w-10 h-10 p-0 bg-accent/80 text-white hover:bg-accent"
               >
-                <Minus size={18} />
+                <Remove style={{ fontSize: 18 }} />
               </Button>
             </div>
           </div>
@@ -86,7 +86,7 @@ export function EnhancementList({ enhancementList, onRemoveItem, onClearAll }: E
         <div className="flex items-center justify-between text-2xl font-bold p-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-lg glass-card">
           <span>Total Cost:</span>
           <div className="flex items-center gap-3 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            <Coins size={28} />
+            <Toll style={{ fontSize: 28 }} />
             {totalCost} Gold
           </div>
         </div>

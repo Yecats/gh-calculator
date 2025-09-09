@@ -1,7 +1,13 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Plus, Coins, Calculator, CaretDown, CaretUp } from '@phosphor-icons/react'
+import { 
+  Add as Plus, 
+  MonetizationOn as Coins, 
+  Calculate as Calculator, 
+  KeyboardArrowDown as CaretDown, 
+  KeyboardArrowUp as CaretUp 
+} from '@mui/icons-material'
 import { EnhancementSpot, Card, Enhancement } from '@/types'
 import enhancements from '@/data/enhancements.json'
 
@@ -16,6 +22,8 @@ interface CostDisplayProps {
   manualLostIcon?: boolean | null
   existingEnhancements?: number
   hexCount?: number
+  showCalculation?: boolean
+  onShowCalculationChange?: (show: boolean) => void
 }
 
 interface CalculationStep {
@@ -36,9 +44,10 @@ export function CostDisplay({
   manualTargets,
   manualLostIcon,
   existingEnhancements = 0,
-  hexCount = 1
+  hexCount = 1,
+  showCalculation = false,
+  onShowCalculationChange
 }: CostDisplayProps) {
-  const [showCalculation, setShowCalculation] = useState(false)
 
   if (currentCost <= 0) return null
 
@@ -142,7 +151,7 @@ export function CostDisplay({
       {/* Header */}
       <div className="flex items-center gap-3">
         <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center">
-          <Coins className="text-accent-foreground" size={16} />
+          <Coins className="text-white" fontSize="small" />
         </div>
         <label className="text-sm font-medium">Enhancement Cost</label>
       </div>
@@ -154,10 +163,10 @@ export function CostDisplay({
             <Button
               variant="outline"
               size="sm"
-              onClick={() => setShowCalculation(!showCalculation)}
+              onClick={() => onShowCalculationChange?.(!showCalculation)}
               className="h-7 px-3 py-1 text-xs text-muted-foreground hover:text-foreground border-border/50 hover:border-accent/50 hover:bg-accent/10"
             >
-              <Calculator size={14} className="mr-1" />
+              <Calculator fontSize="small" className="mr-1" />
               {showCalculation ? 'Hide' : 'Show'} Breakdown
             </Button>
           </div>
@@ -172,10 +181,10 @@ export function CostDisplay({
                 <Button
                   variant="ghost"
                   size="sm"
-                  onClick={() => setShowCalculation(false)}
+                  onClick={() => onShowCalculationChange?.(false)}
                   className="h-6 w-6 p-0 text-muted-foreground hover:text-foreground hover:bg-accent/10"
                 >
-                  <CaretUp size={12} />
+                  <CaretUp style={{ fontSize: 12 }} />
                 </Button>
               </div>
               <div className="space-y-2 text-sm">
@@ -201,7 +210,7 @@ export function CostDisplay({
         {/* Main content centered when no breakdown */}
         <div className={`flex-1 flex flex-col ${showCalculation ? 'justify-start' : 'justify-center'}`}>
           <div className="text-4xl font-bold text-accent mb-4 flex items-center justify-center gap-3">
-            <Coins size={36} className="text-accent" />
+            <Coins style={{ fontSize: 36 }} className="text-accent" />
             <span>{currentCost} Gold</span>
           </div>
           
@@ -210,7 +219,7 @@ export function CostDisplay({
               onClick={onAddToList}
               className="flex items-center gap-2 rounded-lg bubble-button px-8 py-3 bg-accent hover:bg-accent/90 text-black font-normal"
             >
-              <Plus size={18} />
+              <Plus style={{ fontSize: 18 }} />
               Add to List
             </Button>
           </div>

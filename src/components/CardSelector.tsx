@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
-import { Check, CaretDown, Image } from '@phosphor-icons/react'
+import { Check, KeyboardArrowDown, Image } from '@mui/icons-material'
 import { ClassData, Card } from '@/types'
 
 interface CardSelectorProps {
@@ -30,7 +30,7 @@ export function CardSelector({
             variant="outline"
             role="combobox"
             aria-expanded={cardSelectOpen}
-            className="w-full max-w-xs justify-between rounded-lg border-2 bubble-button h-12 px-4"
+            className="w-full justify-between rounded-lg border-2 bubble-button h-12 px-4"
           >
             {selectedCard && selectedCardData ? (
               <div className="flex items-center justify-between w-full min-w-0">
@@ -42,10 +42,10 @@ export function CardSelector({
             ) : (
               <span className="text-muted-foreground">Choose a card...</span>
             )}
-            <CaretDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+            <KeyboardArrowDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-full max-w-xs p-0 rounded-lg border-0 shadow-xl backdrop-blur-sm bg-card/95">
+        <PopoverContent className="w-full p-0 rounded-lg border-0 shadow-xl backdrop-blur-sm bg-card/95">
           <Command>
             <CommandInput placeholder="Search cards..." className="h-9" />
             <CommandList>
@@ -97,10 +97,10 @@ export function CardPreview({ selectedCardData }: CardPreviewProps) {
 
   return (
     <div className="space-y-3">
-      <div className="w-full max-w-xs">
+      <div className="w-full">
         <div className="aspect-[3/4] bg-gradient-to-br from-muted/50 to-muted/80 rounded-lg border-2 border-dashed border-muted-foreground/30 flex items-center justify-center shadow-lg">
           <div className="text-center text-muted-foreground">
-            <Image size={32} className="mx-auto mb-2" />
+            <Image style={{ fontSize: 32 }} className="mx-auto mb-2" />
             <div className="text-sm font-medium">Card Image</div>
           </div>
         </div>

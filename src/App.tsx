@@ -1,6 +1,14 @@
 import { useState, useEffect } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Calculator, Eye, GridNine, Plus } from '@phosphor-icons/react'
+import { Button } from '@/components/ui/button'
+import { 
+  AutoAwesome as Calculator, 
+  Visibility as Eye, 
+  GridOn as GridNine, 
+  Add as Plus, 
+  Help as Question, 
+  Star 
+} from '@mui/icons-material'
 import cardsData from '@/data/cards.json'
 import mindthiefData from '@/data/mindthief.json'
 import characterClasses from '@/data/classes.json'
@@ -46,6 +54,7 @@ function App() {
   const [enhancementList, setEnhancementList] = useState<EnhancementItem[]>([])
   const [showMarkRestrictions, setShowMarkRestrictions] = useState<boolean>(false)
   const [cardSelectOpen, setCardSelectOpen] = useState<boolean>(false)
+  const [showCalculation, setShowCalculation] = useState<boolean>(false)
   
   // Manual overrides for card properties - initialize with defaults when card changes
   const [manualCardLevel, setManualCardLevel] = useState<number | string>('')
@@ -160,6 +169,7 @@ function App() {
     setCurrentCost(0)
     setShowMarkRestrictions(false)
     setCardSelectOpen(false)
+    setShowCalculation(false)
     setManualCardLevel('')
     setManualTargets(null)
     setManualLostIcon(null)
@@ -171,6 +181,7 @@ function App() {
     setSelectedEnhancement('')
     setCurrentCost(0)
     setShowMarkRestrictions(false)
+    setShowCalculation(false)
     // Initialize manual overrides to empty so they use card defaults
     setManualCardLevel('')
     setManualTargets(null)
@@ -181,6 +192,48 @@ function App() {
   useEffect(() => {
     setShowMarkRestrictions(false)
   }, [selectedSpot])
+
+  // Auto-scroll when new sections appear
+  useEffect(() => {
+    if (selectedClass) {
+      // Small delay to ensure DOM is updated
+      setTimeout(() => {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+      }, 100)
+    }
+  }, [selectedClass])
+
+  useEffect(() => {
+    if (selectedCard && selectedCardData) {
+      setTimeout(() => {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+      }, 100)
+    }
+  }, [selectedCard, selectedCardData])
+
+  useEffect(() => {
+    if (selectedSpot) {
+      setTimeout(() => {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+      }, 100)
+    }
+  }, [selectedSpot])
+
+  useEffect(() => {
+    if (selectedEnhancement) {
+      setTimeout(() => {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+      }, 100)
+    }
+  }, [selectedEnhancement])
+
+  useEffect(() => {
+    if (showCalculation) {
+      setTimeout(() => {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+      }, 100)
+    }
+  }, [showCalculation])
   
   return (
     <div className="min-h-screen p-4">
@@ -188,7 +241,7 @@ function App() {
         {/* Header */}
         <div className="text-center space-y-4 py-8">
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-primary to-accent mb-4 shadow-lg">
-            <Calculator className="text-primary-foreground" size={32} />
+            <Calculator fontSize="large" style={{ color: 'white' }} />
           </div>
           <h1 className="text-4xl font-bold text-foreground tracking-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Gloomhaven Second Edition Enhancement Calculator
@@ -206,7 +259,7 @@ function App() {
               <CardHeader className="pb-4">
                 <CardTitle className="flex items-center gap-3 text-xl">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                    <GridNine className="text-primary-foreground" size={20} />
+                    <GridNine className="text-white" fontSize="small" />
                   </div>
                   Character Class
                 </CardTitle>
@@ -226,33 +279,46 @@ function App() {
                 <CardHeader className="pb-4">
                   <CardTitle className="flex items-center gap-3 text-xl">
                     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center">
-                      <Eye className="text-accent-foreground" size={20} />
+                      <Eye className="text-white" fontSize="small" />
                     </div>
                     Select Card
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-6">
-                    {/* Card Selector */}
-                    <CardSelector
-                      selectedClassData={selectedClassData}
-                      selectedCard={selectedCard}
-                      cardSelectOpen={cardSelectOpen}
-                      onCardSelectOpenChange={setCardSelectOpen}
-                      onCardSelect={setSelectedCard}
-                    />
-                    
-                    {/* Card Preview and Region Selection - Side by Side */}
-                    {selectedCard && selectedCardData && (
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-8">
-                        {/* Card Picture - Left Side */}
-                        <CardPreview selectedCardData={selectedCardData} />
+                    {/* Card Preview and Enhancement Spots */}
+                    {selectedCard && selectedCardData ? (
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        {/* Left Column: Card Selector and Card Picture */}
+                        <div className="w-full max-w-sm mx-auto lg:max-w-none lg:mx-0 space-y-4">
+                          <CardSelector
+                            selectedClassData={selectedClassData}
+                            selectedCard={selectedCard}
+                            cardSelectOpen={cardSelectOpen}
+                            onCardSelectOpenChange={setCardSelectOpen}
+                            onCardSelect={setSelectedCard}
+                          />
+                          <CardPreview selectedCardData={selectedCardData} />
+                        </div>
                         
-                        {/* Region and Spot Selection - Right Side */}
-                        <EnhancementSpots
-                          spots={availableSpots}
-                          selectedSpot={selectedSpot}
-                          onSpotSelect={setSelectedSpot}
+                        {/* Right Column: Enhancement Spots */}
+                        <div className="w-full">
+                          <EnhancementSpots
+                            spots={availableSpots}
+                            selectedSpot={selectedSpot}
+                            onSpotSelect={setSelectedSpot}
+                          />
+                        </div>
+                      </div>
+                    ) : (
+                      /* Card Selector only when no card selected */
+                      <div className="w-full max-w-md">
+                        <CardSelector
+                          selectedClassData={selectedClassData}
+                          selectedCard={selectedCard}
+                          cardSelectOpen={cardSelectOpen}
+                          onCardSelectOpenChange={setCardSelectOpen}
+                          onCardSelect={setSelectedCard}
                         />
                       </div>
                     )}
@@ -268,9 +334,17 @@ function App() {
               <CardHeader className="pb-4">
                 <CardTitle className="flex items-center gap-3 text-xl">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                    <Plus className="text-primary-foreground" size={20} />
+                    <Star className="text-white" fontSize="small" />
                   </div>
                   Enhancements
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    className="p-2 h-8 w-8 rounded-full bubble-button ml-auto"
+                    onClick={() => setShowMarkRestrictions(!showMarkRestrictions)}
+                  >
+                    <Question className="text-white" fontSize="small" />
+                  </Button>
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -315,6 +389,8 @@ function App() {
                       manualLostIcon={manualLostIcon}
                       existingEnhancements={existingEnhancements}
                       hexCount={hexCount}
+                      showCalculation={showCalculation}
+                      onShowCalculationChange={setShowCalculation}
                     />
                   </div>
                 )}

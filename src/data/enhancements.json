@@ -86,28 +86,28 @@
     "baseCost": 40,
     "marks": ["square", "circle", "diamond", "diamondPlus"],
     "requiredAbilityTypes": ["summon"],
-    "icon": "?"
+    "icon": "/src/assets/icons/enhancements/heal.svg"
   },
   "summonMove1": {
     "name": "+1 Summon Move",
     "baseCost": 60,
     "marks": ["square", "circle", "diamond", "diamondPlus"],
     "requiredAbilityTypes": ["summon"],
-    "icon": "?"
+    "icon": "/src/assets/icons/enhancements/move.svg"
   },
   "summonAttack1": {
     "name": "+1 Summon Attack",
     "baseCost": 100,
     "marks": ["square", "circle", "diamond", "diamondPlus"],
     "requiredAbilityTypes": ["summon"],
-    "icon": "?"
+    "icon": "/src/assets/icons/enhancements/attack.svg"
   },
   "summonRange1": {
     "name": "+1 Summon Range",
     "baseCost": 50,
     "marks": ["square", "circle", "diamond", "diamondPlus"],
     "requiredAbilityTypes": ["summon"],
-    "icon": "?"
+    "icon": "/src/assets/icons/enhancements/range.svg"
   },
   "ward": {
     "name": "Ward",
