@@ -10,6 +10,7 @@ export interface Enhancement {
   special?: string
   requiredAbilityTypes?: string[]
   requiredAbilityProperties?: string[]
+  icon?: string
 }
 
 export interface EnhancementSpot {

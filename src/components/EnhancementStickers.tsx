@@ -68,8 +68,22 @@ export function EnhancementStickers({
               borderColor: selectedEnhancement === key ? 'oklch(0.68 0.15 140)' : undefined
             }}
           >
-            <div className="w-6 h-6 bg-gradient-to-br from-muted to-muted/50 rounded-full flex items-center justify-center">
-              <Image size={12} />
+            <div className="w-12 h-12 flex items-center justify-center">
+              {enhancement.icon && enhancement.icon !== '?' ? (
+                <img 
+                  src={`/gh-calculator/src/assets/icons/enhancements/${enhancement.icon.replace('./src/assets/icons/enhancements/', '').replace('/src/assets/icons/enhancements/', '')}`}
+                  alt={enhancement.name}
+                  className="w-10 h-10"
+                  onError={(e) => {
+                    // Fallback to question mark icon if image fails to load
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const fallback = target.nextElementSibling as HTMLElement;
+                    if (fallback) fallback.style.display = 'block';
+                  }}
+                />
+              ) : null}
+              <Image size={32} className={enhancement.icon && enhancement.icon !== '?' ? 'hidden' : 'block'} />
             </div>
             <span className="text-xs leading-tight text-center font-medium">{enhancement.name}</span>
             <Badge 

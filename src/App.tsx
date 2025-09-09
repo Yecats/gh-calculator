@@ -285,7 +285,7 @@ function App() {
                 
                 {/* Cost Modifiers */}
                 {selectedEnhancement && (
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-6 items-stretch">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
                     <CostModifiers
                       selectedCardData={selectedCardData}
                       selectedSpot={selectedSpot}

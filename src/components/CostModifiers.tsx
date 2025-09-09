@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Calculator, Plus, Minus, ArrowCounterClockwise } from '@phosphor-icons/react'
+import { Calculator, ArrowCounterClockwise } from '@phosphor-icons/react'
 import { Card, EnhancementSpot } from '@/types'
 
 interface CostModifiersProps {
@@ -77,7 +77,7 @@ export function CostModifiers({
                   }}
                   className="h-8 w-8 p-0 rounded-l-lg hover:bg-accent hover:text-accent-foreground"
                 >
-                  <Minus size={14} />
+                  -
                 </Button>
                 <span className="w-10 text-center text-sm font-medium">
                   {currentCardLevel === 'X' ? 1 : currentCardLevel}
@@ -92,7 +92,7 @@ export function CostModifiers({
                   }}
                   className="h-8 w-8 p-0 rounded-r-lg hover:bg-accent hover:text-accent-foreground"
                 >
-                  <Plus size={14} />
+                  +
                 </Button>
               </div>
             </div>
@@ -110,7 +110,7 @@ export function CostModifiers({
                   disabled={currentTargets <= 1}
                   className="h-8 w-8 p-0 rounded-l-lg hover:bg-accent hover:text-accent-foreground"
                 >
-                  <Minus size={14} />
+                  -
                 </Button>
                 <span className="w-10 text-center text-sm font-medium">{currentTargets}</span>
                 <Button
@@ -120,7 +120,7 @@ export function CostModifiers({
                   disabled={currentTargets >= 10}
                   className="h-8 w-8 p-0 rounded-r-lg hover:bg-accent hover:text-accent-foreground"
                 >
-                  <Plus size={14} />
+                  +
                 </Button>
               </div>
             </div>
@@ -157,7 +157,7 @@ export function CostModifiers({
                   disabled={existingEnhancements <= 0}
                   className="h-8 w-8 p-0 rounded-l-lg hover:bg-accent hover:text-accent-foreground"
                 >
-                  <Minus size={14} />
+                  -
                 </Button>
                 <span className="w-10 text-center text-sm font-medium">{existingEnhancements}</span>
                 <Button
@@ -167,7 +167,7 @@ export function CostModifiers({
                   disabled={existingEnhancements >= 10}
                   className="h-8 w-8 p-0 rounded-r-lg hover:bg-accent hover:text-accent-foreground"
                 >
-                  <Plus size={14} />
+                  +
                 </Button>
               </div>
             </div>
@@ -193,7 +193,7 @@ export function CostModifiers({
                     disabled={hexCount <= 1}
                     className="h-8 w-8 p-0 rounded-l-lg hover:bg-accent hover:text-accent-foreground"
                   >
-                    <Minus size={14} />
+                    -
                   </Button>
                   <span className="w-10 text-center text-sm font-medium">{hexCount}</span>
                   <Button
@@ -203,7 +203,7 @@ export function CostModifiers({
                     disabled={hexCount >= 20}
                     className="h-8 w-8 p-0 rounded-r-lg hover:bg-accent hover:text-accent-foreground"
                   >
-                    <Plus size={14} />
+                    +
                   </Button>
                 </div>
               </div>
