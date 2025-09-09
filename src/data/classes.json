@@ -6,7 +6,7 @@
   { "id": "SW", "color": "#583D72", "name": "Spellweaver", "icon": "template" },
   { "id": "TI", "color": "#6C5A45", "name": "Tinkerer", "icon": "template" },
   { "id": "BE", "color": "#71382F", "name": "Lightning Bolts", "icon": "template" },
-  { "id": "BS", "color": "#403129", "name": "Crossed Swords", "icon": "template" },
+  { "id": "CS", "color": "#403129", "name": "Crossed Swords", "icon": "template" },
   { "id": "DS", "color": "#3D7584", "name": "Angry Face", "icon": "template" },
   { "id": "EL", "color": "#474747", "name": "Triangles", "icon": "template" },
   { "id": "NS", "color": "#49475F", "name": "Eclipse", "icon": "template" },
