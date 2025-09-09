@@ -32,9 +32,21 @@ export function EnhancementSpots({ spots, selectedSpot, onSpotSelect }: Enhancem
                   <span className="text-xs text-left">{spot.description}</span>
                 </div>
                 {spot.hasLostIcon && (
-                  <Badge variant="destructive" className="shrink-0 text-xs rounded-full bg-destructive text-destructive-foreground px-3 py-1">
-                    Lost
-                  </Badge>
+                  <div className="shrink-0 w-6 h-6 flex items-center justify-center">
+                    <img 
+                      src="/gh-calculator/src/assets/icons/enhancements/lost.svg"
+                      alt="Lost Icon"
+                      className="w-5 h-5"
+                      onError={(e) => {
+                        // Fallback to text if image fails to load
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const fallback = target.nextElementSibling as HTMLElement;
+                        if (fallback) fallback.style.display = 'inline';
+                      }}
+                    />
+                    <span className="text-xs text-destructive hidden">Lost</span>
+                  </div>
                 )}
               </div>
             </Button>
