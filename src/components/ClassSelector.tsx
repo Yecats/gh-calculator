@@ -64,16 +64,17 @@ const ClassIcon = ({ classId, color, isSelected }: { classId: string, color: str
         const response = await fetch(iconUrl)
         if (response.ok) {
           let text = await response.text()
-          // Replace currentColor with the actual color we want
           const targetColor = isSelected ? 'white' : color
+          
+          // Replace all fill attributes with our target color
           text = text.replace(/fill="currentColor"/g, `fill="${targetColor}"`)
           text = text.replace(/fill="black"/g, `fill="${targetColor}"`)
           text = text.replace(/fill="#000"/g, `fill="${targetColor}"`)
           text = text.replace(/fill="#000000"/g, `fill="${targetColor}"`)
           
-          // Make the SVG larger by setting explicit width and height
+          // Set proper size and ensure color inheritance
           text = text.replace(/width="300" height="300"/, 'width="48" height="48"')
-          text = text.replace(/<svg([^>]*)>/, '<svg$1 style="width: 48px; height: 48px;">')
+          text = text.replace(/<svg([^>]*)>/, `<svg$1 style="width: 48px; height: 48px; color: ${targetColor};">`)
           
           setSvgContent(text)
         }
