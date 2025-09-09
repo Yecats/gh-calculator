@@ -184,7 +184,7 @@ function App() {
   
   return (
     <div className="min-h-screen p-4">
-      <div className="max-w-4xl mx-auto space-y-6">
+      <div className="max-w-6xl mx-auto space-y-6">
         {/* Header */}
         <div className="text-center space-y-4 py-8">
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-primary to-accent mb-4 shadow-lg">
@@ -244,7 +244,7 @@ function App() {
                     
                     {/* Card Preview and Region Selection - Side by Side */}
                     {selectedCard && selectedCardData && (
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-8">
                         {/* Card Picture - Left Side */}
                         <CardPreview selectedCardData={selectedCardData} />
                         
@@ -285,7 +285,7 @@ function App() {
                 
                 {/* Cost Modifiers */}
                 {selectedEnhancement && (
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-6 items-stretch">
                     <CostModifiers
                       selectedCardData={selectedCardData}
                       selectedSpot={selectedSpot}
