@@ -302,7 +302,7 @@ function App() {
                         </div>
                         
                         {/* Right Column: Enhancement Spots */}
-                        <div className="w-full">
+                        <div className="w-full lg:mt-16">
                           <EnhancementSpots
                             spots={availableSpots}
                             selectedSpot={selectedSpot}

@@ -29,7 +29,7 @@ export function EnhancementSpots({ spots, selectedSpot, onSpotSelect }: Enhancem
                   <Badge variant="secondary" className="shrink-0 text-xs rounded-full bg-accent text-accent-foreground">
                     {spot.region.charAt(0).toUpperCase() + spot.region.slice(1)}
                   </Badge>
-                  <span className="text-xs text-left">{spot.description}</span>
+                  <span className="text-sm text-left">{spot.description}</span>
                 </div>
                 {spot.hasLostIcon && (
                   <div className="shrink-0 w-6 h-6 flex items-center justify-center">

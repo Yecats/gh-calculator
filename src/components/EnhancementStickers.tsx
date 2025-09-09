@@ -82,7 +82,7 @@ export function EnhancementStickers({
               className={`text-xs px-2 rounded-full ${
                 key.startsWith('summon') 
                   ? 'bg-white text-black' 
-                  : 'bg-accent text-accent-foreground'
+                  : 'bg-accent text-black'
               }`}
             >
               {enhancement.baseCost}g
