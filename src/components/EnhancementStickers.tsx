@@ -2,8 +2,9 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'
-import { Image, Question } from '@phosphor-icons/react'
+import { Image } from '@mui/icons-material'
 import { Enhancement, EnhancementSpot } from '@/types'
+import EnhancementIcon from './EnhancementIcon'
 import markTypes from '@/data/mark-types.json'
 
 const MARK_TYPES: Record<string, any> = markTypes
@@ -28,7 +29,7 @@ export function EnhancementStickers({
   if (!selectedSpot) return null
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* Mark Restrictions */}
       <Collapsible open={showMarkRestrictions} onOpenChange={onShowMarkRestrictionsChange}>
         {/* Mark Restrictions Content */}
@@ -47,7 +48,7 @@ export function EnhancementStickers({
       </Collapsible>
 
       {/* Enhancement Grid */}
-      <div className="flex flex-wrap justify-center gap-3">
+      <div className="flex flex-wrap justify-center lg:justify-start gap-3">
         {availableEnhancements.map(([key, enhancement]) => (
           <Button
             key={key}
@@ -61,20 +62,17 @@ export function EnhancementStickers({
           >
             <div className="w-12 h-12 flex items-center justify-center">
               {enhancement.icon && enhancement.icon !== '?' ? (
-                <img 
-                  src={`/gh-calculator/src/assets/icons/enhancements/${enhancement.icon.replace('./src/assets/icons/enhancements/', '').replace('/src/assets/icons/enhancements/', '')}`}
+                <EnhancementIcon 
+                  iconPath={enhancement.icon}
                   alt={enhancement.name}
                   className="w-10 h-10"
-                  onError={(e) => {
-                    // Fallback to question mark icon if image fails to load
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    const fallback = target.nextElementSibling as HTMLElement;
-                    if (fallback) fallback.style.display = 'block';
+                  onError={() => {
+                    // This will fall back to the Material UI Image icon automatically
                   }}
                 />
-              ) : null}
-              <Image size={32} className={enhancement.icon && enhancement.icon !== '?' ? 'hidden' : 'block'} />
+              ) : (
+                <Image style={{ fontSize: 32, color: 'white' }} />
+              )}
             </div>
             <span className="text-xs leading-tight text-center font-medium">{enhancement.name}</span>
             <Badge 

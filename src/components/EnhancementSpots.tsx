@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { EnhancementSpot } from '@/types'
+import EnhancementIcon from './EnhancementIcon'
 
 interface EnhancementSpotsProps {
   spots: EnhancementSpot[]
@@ -10,7 +11,7 @@ interface EnhancementSpotsProps {
 
 export function EnhancementSpots({ spots, selectedSpot, onSpotSelect }: EnhancementSpotsProps) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       <div className="space-y-3">
         <div className="text-sm font-medium text-muted-foreground">Enhancement Spots:</div>
         <div className="space-y-2">
@@ -33,19 +34,14 @@ export function EnhancementSpots({ spots, selectedSpot, onSpotSelect }: Enhancem
                 </div>
                 {spot.hasLostIcon && (
                   <div className="shrink-0 w-6 h-6 flex items-center justify-center">
-                    <img 
-                      src="/gh-calculator/src/assets/icons/enhancements/lost.svg"
+                    <EnhancementIcon 
+                      iconPath="/src/assets/icons/enhancements/lost.svg"
                       alt="Lost Icon"
                       className="w-5 h-5"
-                      onError={(e) => {
-                        // Fallback to text if image fails to load
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                        const fallback = target.nextElementSibling as HTMLElement;
-                        if (fallback) fallback.style.display = 'inline';
+                      onError={() => {
+                        // Fallback handled by EnhancementIcon component
                       }}
                     />
-                    <span className="text-xs text-destructive hidden">Lost</span>
                   </div>
                 )}
               </div>

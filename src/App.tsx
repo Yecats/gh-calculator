@@ -261,15 +261,17 @@ function App() {
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                     <GridNine className="text-white" fontSize="small" />
                   </div>
-                  Character Class
+                  Select Class
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <ClassSelector
-                  characterClasses={CHARACTER_CLASSES}
-                  selectedClass={selectedClass}
-                  onClassSelect={setSelectedClass}
-                />
+                <div className="space-y-6">
+                  <ClassSelector
+                    characterClasses={CHARACTER_CLASSES}
+                    selectedClass={selectedClass}
+                    onClassSelect={setSelectedClass}
+                  />
+                </div>
               </CardContent>
             </Card>
             
