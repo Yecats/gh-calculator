@@ -7,7 +7,7 @@
         "dev": "vite",
         "dev:with-autosave": "concurrently \"vite\" \"node dev-server.js\"",
         "kill": "fuser -k 5000/tcp",
-        "copy-data": "powershell \"Copy-Item 'src/data/*.json' 'public/data/' -Force\"",
+        "copy-data": "node copy-data.js",
         "prebuild": "npm run copy-data",
         "build": "tsc -b && vite build",
         "lint": "eslint .",

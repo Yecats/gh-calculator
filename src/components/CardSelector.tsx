@@ -52,7 +52,19 @@ export function CardSelector({
               <CommandEmpty>No cards found.</CommandEmpty>
               <CommandGroup>
                 {selectedClassData ? (
-                  Object.entries(selectedClassData.cards).map(([key, card]) => (
+                  Object.entries(selectedClassData.cards)
+                    .sort(([, a], [, b]) => {
+                      // Put X level cards first
+                      if (a.level === 'X' && b.level !== 'X') return -1
+                      if (a.level !== 'X' && b.level === 'X') return 1
+                      
+                      // If both are X or both are numbers, sort by level
+                      if (a.level === 'X' && b.level === 'X') return 0
+                      
+                      // Sort numerically for number levels
+                      return Number(a.level) - Number(b.level)
+                    })
+                    .map(([key, card]) => (
                     <CommandItem
                       key={key}
                       value={card.name}
