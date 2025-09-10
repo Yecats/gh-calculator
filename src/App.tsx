@@ -332,20 +332,20 @@ function App() {
 
         {/* Tabs */}
         <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
-          <TabsList className={`grid w-full ${isDev ? 'grid-cols-2' : 'grid-cols-1'}`}>
-            <TabsTrigger value="calculator" className="flex items-center gap-2">
-              <Calculator fontSize="small" />
-              Calculator
-            </TabsTrigger>
-            {isDev && (
+          {isDev && (
+            <TabsList className="grid w-full grid-cols-2">
+              <TabsTrigger value="calculator" className="flex items-center gap-2">
+                <Calculator fontSize="small" />
+                Calculator
+              </TabsTrigger>
               <TabsTrigger value="editor" className="flex items-center gap-2">
                 <EditIcon fontSize="small" />
                 Card Editor (Dev)
               </TabsTrigger>
-            )}
-          </TabsList>
+            </TabsList>
+          )}
 
-          <TabsContent value="calculator" className="space-y-8 mt-6">
+          <TabsContent value="calculator" className={`space-y-8 ${isDev ? 'mt-6' : 'mt-0'}`}>
             {/* Calculator Content */}
             <div className="space-y-8">{/* Class and Card Selection */}
           <div className="space-y-6">
