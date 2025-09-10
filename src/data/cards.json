@@ -11,25 +11,25 @@
             "id": "top-attack",
             "type": "square",
             "description": "Attack 3",
-            "x": 30,
-            "y": 35,
             "region": "top",
             "isSummon": false,
             "targets": 1,
             "hasLostIcon": false,
-            "abilityTypes": ["attack"]
+            "abilities": [
+              "attack"
+            ]
           },
           {
             "id": "bottom-move",
             "type": "square",
             "description": "Move 3",
-            "x": 20,
-            "y": 80,
             "region": "bottom",
             "isSummon": false,
             "targets": 1,
             "hasLostIcon": false,
-            "abilityTypes": ["move"]
+            "abilities": [
+              "move"
+            ]
           }
         ]
       }
@@ -47,26 +47,26 @@
             "id": "top-attack",
             "type": "circle",
             "description": "Top action: Attack 3",
-            "x": 30,
-            "y": 40,
             "region": "top",
             "isSummon": false,
             "targets": 3,
             "hasLostIcon": false,
-            "abilityTypes": ["attack"],
-            "abilityProperties": ["range"]
+            "abilities": [
+              "attack",
+              "range"
+            ]
           },
           {
             "id": "bottom-attack",
             "type": "square",
             "description": "Bottom action: Attack 4",
-            "x": 35,
-            "y": 80,
             "region": "bottom",
             "isSummon": false,
             "targets": 1,
             "hasLostIcon": true,
-            "abilityTypes": ["attack"]
+            "abilities": [
+              "attack"
+            ]
           }
         ]
       }

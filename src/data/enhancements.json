@@ -17,7 +17,6 @@
     "name": "+1 Range",
     "baseCost": 30,
     "marks": ["square", "circle", "diamond", "diamondPlus"],
-    "requiredAbilityTypes": ["attack", "heal", "special"],
     "requiredAbilityProperties": ["range"],
     "icon": "/src/assets/icons/enhancements/range.svg"
   },
@@ -25,7 +24,6 @@
     "name": "+1 Target",
     "baseCost": 75,
     "marks": ["square", "circle", "diamond", "diamondPlus"],
-    "requiredAbilityTypes": ["attack", "heal", "special"],
     "requiredAbilityProperties": ["target"],
     "icon": "/src/assets/icons/enhancements/target.svg"
   },
@@ -33,7 +31,7 @@
     "name": "+1 Shield",
     "baseCost": 80,
     "marks": ["square", "circle", "diamond", "diamondPlus"],
-    "requiredAbilityTypes": ["shield"],
+    "requiredAbilityProperties": ["shield"],
     "icon": "/src/assets/icons/enhancements/shield.svg"
   },
   "retaliate1": {
@@ -47,7 +45,6 @@
     "name": "+1 Pierce",
     "baseCost": 30,
     "marks": ["square", "circle", "diamond", "diamondPlus"],
-    "requiredAbilityTypes": ["attack"],
     "requiredAbilityProperties": ["pierce"],
     "icon": "/src/assets/icons/enhancements/pierce.svg"
   },
@@ -62,7 +59,6 @@
     "name": "+1 Push",
     "baseCost": 30,
     "marks": ["square", "circle", "diamond", "diamondPlus"],
-    "requiredAbilityTypes": ["attack", "special"],
     "requiredAbilityProperties": ["push"],
     "icon": "?"
   },

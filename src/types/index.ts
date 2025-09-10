@@ -17,15 +17,12 @@ export interface EnhancementSpot {
   id: string
   type: string
   description: string
-  x: number
-  y: number
   region: string
   isSummon: boolean
   targets?: number
   hasLostIcon: boolean
   allowedSummonEnhancements?: string[]
-  abilityTypes: string[]
-  abilityProperties?: string[]
+  abilities: string[]
 }
 
 export interface Card {

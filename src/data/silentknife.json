@@ -1,0 +1,35 @@
+{
+  "cards": {
+    "preparation": {
+      "name": "Preparation",
+      "level": 1,
+      "image": "silentknife-preparation.jpg",
+      "enhancementSpots": [
+        {
+          "id": "top-attack",
+          "type": "square",
+          "description": "Attack 3",
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilities": [
+            "attack"
+          ]
+        },
+        {
+          "id": "bottom-move",
+          "type": "square",
+          "description": "Move 3",
+          "region": "bottom",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilities": [
+            "move"
+          ]
+        }
+      ]
+    }
+  }
+}

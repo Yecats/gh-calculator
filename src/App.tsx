@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { 
   AutoAwesome as Calculator, 
   Visibility as Eye, 
   GridOn as GridNine, 
   Add as Plus, 
   Help as Question, 
-  Star 
+  Star,
+  Edit as EditIcon
 } from '@mui/icons-material'
 import cardsData from '@/data/cards.json'
 import mindthiefData from '@/data/mindthief.json'
@@ -30,14 +32,16 @@ import { EnhancementStickers } from '@/components/EnhancementStickers'
 import { CostModifiers } from '@/components/CostModifiers'
 import { CostDisplay } from '@/components/CostDisplay'
 import { EnhancementList } from '@/components/EnhancementList'
+import { CardEditor } from '@/components/CardEditor'
 
 // Import utilities
 import { getAvailableEnhancements, calculateEnhancementCost } from '@/utils/enhancements'
 
 const CHARACTER_CLASSES: CharacterClass[] = characterClasses || []
+const isDev = import.meta.env.DEV
 
 // Merge mindthief data with existing cards data
-const CLASSES = {
+const INITIAL_CLASSES = {
   ...cardsData,
   MT: {
     name: "Mindthief",
@@ -46,6 +50,8 @@ const CLASSES = {
 } as Record<string, ClassData>
 
 function App() {
+  const [activeTab, setActiveTab] = useState<string>('calculator')
+  const [classes, setClasses] = useState<Record<string, ClassData>>(INITIAL_CLASSES)
   const [selectedClass, setSelectedClass] = useState<string>('')
   const [selectedCard, setSelectedCard] = useState<string>('')
   const [selectedSpot, setSelectedSpot] = useState<EnhancementSpot | null>(null)
@@ -53,6 +59,43 @@ function App() {
   const [currentCost, setCurrentCost] = useState<number>(0)
   const [enhancementList, setEnhancementList] = useState<EnhancementItem[]>([])
   const [showMarkRestrictions, setShowMarkRestrictions] = useState<boolean>(false)
+
+  // Auto-save when switching from editor to calculator
+  const handleTabChange = async (newTab: string) => {
+    // If switching from editor to calculator, save changes to files first
+    if (activeTab === 'editor' && newTab === 'calculator' && isDev) {
+      try {
+        const savedClasses = localStorage.getItem('gh-calculator-classes')
+        if (savedClasses) {
+          const classes = JSON.parse(savedClasses)
+          
+          const response = await fetch('http://localhost:3001/api/save-all-classes', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ classes })
+          })
+          
+          if (response.ok) {
+            const result = await response.json()
+            console.log('✅ Auto-saved to files when switching tabs:', result.files)
+            
+            // Small delay to allow file save to complete
+            setTimeout(() => {
+              setActiveTab(newTab)
+            }, 200)
+            return
+          }
+        }
+      } catch (error) {
+        console.log('Could not auto-save to files:', error)
+      }
+    }
+    
+    // Normal tab switch (no save needed)
+    setActiveTab(newTab)
+  }
   const [cardSelectOpen, setCardSelectOpen] = useState<boolean>(false)
   const [showCalculation, setShowCalculation] = useState<boolean>(false)
   
@@ -65,9 +108,45 @@ function App() {
   const [existingEnhancements, setExistingEnhancements] = useState<number>(0)
   const [hexCount, setHexCount] = useState<number>(1)
   
-  const selectedClassData = selectedClass ? CLASSES[selectedClass] : null
+  const selectedClassData = selectedClass ? classes[selectedClass] : null
   const selectedCardData = selectedClassData && selectedCard ? selectedClassData.cards[selectedCard] : null
-  
+
+  // Load saved classes from localStorage on mount (dev mode only)
+  useEffect(() => {
+    if (isDev) {
+      const saved = localStorage.getItem('gh-calculator-classes')
+      console.log('🔍 App.tsx checking localStorage on mount:', saved ? 'Data found' : 'No data')
+      if (saved) {
+        try {
+          const savedClasses = JSON.parse(saved)
+          console.log('📖 App.tsx loaded saved classes:', Object.keys(savedClasses))
+          setClasses(savedClasses)
+          console.log('📖 Loaded saved classes from localStorage')
+        } catch (e) {
+          console.error('Failed to load saved classes:', e)
+        }
+      }
+    }
+  }, [])
+
+  // Also reload classes when switching TO calculator tab (in case editor made changes)
+  useEffect(() => {
+    if (activeTab === 'calculator' && isDev) {
+      const saved = localStorage.getItem('gh-calculator-classes')
+      console.log('🔍 App.tsx checking localStorage on tab switch to calculator:', saved ? 'Data found' : 'No data')
+      if (saved) {
+        try {
+          const savedClasses = JSON.parse(saved)
+          console.log('🔄 App.tsx refreshing with saved classes:', Object.keys(savedClasses))
+          setClasses(savedClasses)
+          console.log('🔄 Refreshed classes from localStorage for calculator')
+        } catch (e) {
+          console.error('Failed to refresh saved classes:', e)
+        }
+      }
+    }
+  }, [activeTab])
+
   // Get all enhancement spots for selected card
   const availableSpots = selectedCardData 
     ? selectedCardData.enhancementSpots
@@ -250,9 +329,25 @@ function App() {
             Calculate the gold cost of enhancing your ability cards for Gloomhaven Second Edition
           </p>
         </div>
-        
-        <div className="space-y-8">
-          {/* Class and Card Selection */}
+
+        {/* Tabs */}
+        <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
+          <TabsList className={`grid w-full ${isDev ? 'grid-cols-2' : 'grid-cols-1'}`}>
+            <TabsTrigger value="calculator" className="flex items-center gap-2">
+              <Calculator fontSize="small" />
+              Calculator
+            </TabsTrigger>
+            {isDev && (
+              <TabsTrigger value="editor" className="flex items-center gap-2">
+                <EditIcon fontSize="small" />
+                Card Editor (Dev)
+              </TabsTrigger>
+            )}
+          </TabsList>
+
+          <TabsContent value="calculator" className="space-y-8 mt-6">
+            {/* Calculator Content */}
+            <div className="space-y-8">{/* Class and Card Selection */}
           <div className="space-y-6">
             {/* Class Selection */}
             <Card className="glass-card border-0 shadow-xl">
@@ -406,7 +501,15 @@ function App() {
             onRemoveItem={removeFromList}
             onClearAll={clearAll}
           />
-        </div>
+            </div>
+          </TabsContent>
+
+          {isDev && (
+            <TabsContent value="editor" className="space-y-8 mt-6">
+              <CardEditor />
+            </TabsContent>
+          )}
+        </Tabs>
       </div>
     </div>
   )

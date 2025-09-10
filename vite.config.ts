@@ -24,4 +24,17 @@ export default defineConfig({
       "@": resolve(projectRoot, "src"),
     },
   },
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(projectRoot, 'index.html'),
+      },
+    },
+    copyPublicDir: true,
+  },
+  publicDir: 'public',
+  // Clear cache on build
+  optimizeDeps: {
+    force: true
+  }
 });

@@ -1,0 +1,36 @@
+{
+  "cards": {
+    "fire-orbs": {
+      "name": "Fire Orbs",
+      "level": 1,
+      "image": "spellweaver-fire-orbs.jpg",
+      "enhancementSpots": [
+        {
+          "id": "top-attack",
+          "type": "circle",
+          "description": "Top action: Attack 3",
+          "region": "top",
+          "isSummon": false,
+          "targets": 3,
+          "hasLostIcon": false,
+          "abilities": [
+            "attack",
+            "range"
+          ]
+        },
+        {
+          "id": "bottom-attack",
+          "type": "square",
+          "description": "Bottom action: Attack 4",
+          "region": "bottom",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": true,
+          "abilities": [
+            "attack"
+          ]
+        }
+      ]
+    }
+  }
+}

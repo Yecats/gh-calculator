@@ -29,26 +29,28 @@ export const getAvailableEnhancements = (selectedSpot: EnhancementSpot | null) =
       return false
     }
     
-    // Check ability type compatibility - enhancement must be compatible with at least one ability type
-    if (enhancement.requiredAbilityTypes && selectedSpot.abilityTypes) {
-      const hasMatchingAbilityType = enhancement.requiredAbilityTypes.some(requiredType => 
-        selectedSpot.abilityTypes.includes(requiredType)
+    // Check ability compatibility - enhancement must be compatible with at least one ability
+    if (enhancement.requiredAbilityTypes && selectedSpot.abilities) {
+      const hasMatchingAbility = enhancement.requiredAbilityTypes.some(requiredType => 
+        selectedSpot.abilities.includes(requiredType)
       )
-      if (!hasMatchingAbilityType) return false
+      if (!hasMatchingAbility) return false
     }
     
     // Check ability property compatibility - if enhancement requires specific properties, spot must have them
     if (enhancement.requiredAbilityProperties && enhancement.requiredAbilityProperties.length > 0) {
-      if (!selectedSpot.abilityProperties || selectedSpot.abilityProperties.length === 0) {
+      if (!selectedSpot.abilities || selectedSpot.abilities.length === 0) {
         return false
       }
       const hasMatchingProperty = enhancement.requiredAbilityProperties.some(requiredProperty =>
-        selectedSpot.abilityProperties!.includes(requiredProperty)
+        selectedSpot.abilities.includes(requiredProperty)
       )
       if (!hasMatchingProperty) return false
     }
     
-    // If no ability type restrictions, allow the enhancement
+    // If enhancement has neither ability types nor properties requirements, allow it
+    // If enhancement has only property requirements, it's already been checked above
+    // If enhancement has ability type requirements, it's already been checked above
     return true
   })
 }
