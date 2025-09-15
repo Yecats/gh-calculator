@@ -48,46 +48,59 @@ export function EnhancementStickers({
       </Collapsible>
 
       {/* Enhancement Grid */}
-      <div className="flex flex-wrap justify-center lg:justify-start gap-3">
-        {availableEnhancements.map(([key, enhancement]) => (
-          <Button
-            key={key}
-            variant="outline"
-            onClick={() => onEnhancementSelect(key)}
-            className="h-auto p-4 flex-col gap-2 text-xs rounded-lg bubble-button border-2 hover:text-accent transition-colors w-28 flex-shrink-0"
-            size="sm"
-            style={{
-              borderColor: selectedEnhancement === key ? 'oklch(0.68 0.15 140)' : undefined
-            }}
-          >
-            <div className="w-12 h-12 flex items-center justify-center">
-              {enhancement.icon && enhancement.icon !== '?' ? (
-                <EnhancementIcon 
-                  iconPath={enhancement.icon}
-                  alt={enhancement.name}
-                  className="w-10 h-10"
-                  onError={() => {
-                    // This will fall back to the Material UI Image icon automatically
-                  }}
-                />
-              ) : (
-                <Image style={{ fontSize: 32, color: 'white' }} />
-              )}
-            </div>
-            <span className="text-xs leading-tight text-center font-medium">{enhancement.name}</span>
-            <Badge 
-              variant="secondary" 
-              className={`text-xs px-2 rounded-full ${
-                key.startsWith('summon') 
-                  ? 'bg-white text-black' 
-                  : 'bg-accent text-black'
-              }`}
+      {availableEnhancements.length > 0 ? (
+        <div className="flex flex-wrap justify-center lg:justify-start gap-3">
+          {availableEnhancements.map(([key, enhancement]) => (
+            <Button
+              key={key}
+              variant="outline"
+              onClick={() => onEnhancementSelect(key)}
+              className="h-auto p-4 flex-col gap-2 text-xs rounded-lg bubble-button border-2 hover:text-accent transition-colors w-28 flex-shrink-0"
+              size="sm"
+              style={{
+                borderColor: selectedEnhancement === key ? 'oklch(0.68 0.15 140)' : undefined
+              }}
             >
-              {enhancement.baseCost}g
-            </Badge>
-          </Button>
-        ))}
-      </div>
+              <div className="w-12 h-12 flex items-center justify-center">
+                {enhancement.icon && enhancement.icon !== '?' ? (
+                  <EnhancementIcon 
+                    iconPath={enhancement.icon}
+                    alt={enhancement.name}
+                    className="w-10 h-10"
+                    onError={() => {
+                      // This will fall back to the Material UI Image icon automatically
+                    }}
+                  />
+                ) : (
+                  <Image style={{ fontSize: 32, color: 'white' }} />
+                )}
+              </div>
+              <span className="text-xs leading-tight text-center font-medium">{enhancement.name}</span>
+              <Badge 
+                variant="secondary" 
+                className={`text-xs px-2 rounded-full ${
+                  key.startsWith('summon') 
+                    ? 'bg-white text-black' 
+                    : 'bg-accent text-black'
+                }`}
+              >
+                {enhancement.baseCost}g
+              </Badge>
+            </Button>
+          ))}
+        </div>
+      ) : (
+        <Alert className="rounded-lg border-2 glass-card">
+          <AlertDescription className="text-center py-4">
+            <div className="flex flex-col items-center gap-2">
+              <Image style={{ fontSize: 48, color: 'rgba(255,255,255,0.3)' }} />
+              <div>
+                <p className="font-medium text-muted-foreground">This card cannot be enhanced.</p>
+              </div>
+            </div>
+          </AlertDescription>
+        </Alert>
+      )}
     </div>
   )
 }

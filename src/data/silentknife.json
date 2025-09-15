@@ -1,13 +1,13 @@
 {
   "cards": {
-    "preparation": {
-      "name": "Preparation",
+    "swift-bow": {
+      "name": "Swift Bow",
       "level": 1,
-      "image": "silentknife-preparation.jpg",
+      "image": "swift-bow.png",
       "enhancementSpots": [
         {
-          "id": "top-attack",
-          "type": "square",
+          "id": "spot-1757909956113",
+          "type": "diamond",
           "description": "Attack 3",
           "region": "top",
           "isSummon": false,
@@ -18,8 +18,8 @@
           ]
         },
         {
-          "id": "bottom-move",
-          "type": "square",
+          "id": "spot-1757909971695",
+          "type": "circle",
           "description": "Move 3",
           "region": "bottom",
           "isSummon": false,
@@ -27,6 +27,346 @@
           "hasLostIcon": false,
           "abilities": [
             "move"
+          ]
+        }
+      ]
+    },
+    "flintlock": {
+      "name": "Flintlock",
+      "level": 3,
+      "image": "flintlock.png",
+      "enhancementSpots": [
+        {
+          "id": "spot-1757909997403",
+          "type": "diamond",
+          "description": "Attack 3",
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilities": [
+            "attack"
+          ]
+        },
+        {
+          "id": "spot-1757910011668",
+          "type": "circle",
+          "description": "Move 2",
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilities": [
+            "move"
+          ]
+        }
+      ]
+    },
+    "flanking-strike": {
+      "name": "Flanking Strike",
+      "level": 1,
+      "image": "flanking-strike.png",
+      "enhancementSpots": [
+        {
+          "id": "spot-1757910039336",
+          "type": "diamond",
+          "description": "Attack 3",
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilities": [
+            "attack"
+          ]
+        }
+      ]
+    },
+    "single-out": {
+      "name": "Single Out",
+      "level": 1,
+      "image": "practiced-reflexes.png",
+      "enhancementSpots": [
+        {
+          "id": "spot-1757910089111",
+          "type": "diamond",
+          "description": "Attack 3",
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilities": [
+            "attack"
+          ]
+        }
+      ]
+    },
+    "venom-shiv": {
+      "name": "Venom Shiv",
+      "level": 1,
+      "image": "attack-3.png",
+      "enhancementSpots": [
+        {
+          "id": "spot-1757910061888",
+          "type": "diamond",
+          "description": "Attack 3",
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilities": [
+            "attack"
+          ]
+        }
+      ]
+    },
+    "practiced-reflexes": {
+      "name": "Practiced Reflexes",
+      "level": 1,
+      "image": "practiced-reflexes.png",
+      "enhancementSpots": [
+        {
+          "id": "spot-1757910163894",
+          "type": "diamond",
+          "description": "Attack 3",
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilities": [
+            "attack"
+          ]
+        },
+        {
+          "id": "spot-1757910175411",
+          "type": "circle",
+          "description": "Move 3",
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilities": [
+            "move"
+          ]
+        },
+        {
+          "id": "spot-1757910184788",
+          "type": "circle",
+          "description": "Move 3",
+          "region": "bottom",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilities": []
+        }
+      ]
+    },
+    "stick-to-the-shadows": {
+      "name": "Stick to the Shadows",
+      "level": 2,
+      "image": "stick-to-the-shadows.png",
+      "enhancementSpots": [
+        {
+          "id": "spot-1757910213329",
+          "type": "circle",
+          "description": "Move 3",
+          "region": "bottom",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilities": [
+            "move"
+          ]
+        }
+      ]
+    },
+    "throwing-knives": {
+      "name": "Throwing Knives",
+      "level": 1,
+      "image": "throwing-knives.png",
+      "enhancementSpots": [
+        {
+          "id": "spot-1757910237423",
+          "type": "square",
+          "description": "Target 2",
+          "region": "top",
+          "isSummon": false,
+          "targets": 2,
+          "hasLostIcon": false,
+          "abilities": [
+            "target"
+          ]
+        },
+        {
+          "id": "spot-1757910255719",
+          "type": "square",
+          "description": "Range 3",
+          "region": "top",
+          "isSummon": false,
+          "targets": 2,
+          "hasLostIcon": false,
+          "abilities": [
+            "range"
+          ]
+        },
+        {
+          "id": "spot-1757910276762",
+          "type": "square",
+          "description": "Pull 2",
+          "region": "bottom",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilities": [
+            "pull"
+          ]
+        },
+        {
+          "id": "spot-1757910420305",
+          "type": "square",
+          "description": "Range 3",
+          "region": "bottom",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilities": [
+            "range"
+          ]
+        }
+      ]
+    },
+    "quick-h-ands": {
+      "name": "Quick H ands",
+      "level": 1,
+      "image": "quick-h-ands.png",
+      "enhancementSpots": [
+        {
+          "id": "spot-1757910505209",
+          "type": "circle",
+          "description": "move 2",
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilities": [
+            "move"
+          ]
+        },
+        {
+          "id": "spot-1757910613295",
+          "type": "diamond",
+          "description": "Attack 3",
+          "region": "bottom",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilities": [
+            "attack"
+          ]
+        }
+      ]
+    },
+    "special-mixture": {
+      "name": "Special Mixture",
+      "level": 1,
+      "image": "special-mixture.png",
+      "enhancementSpots": [
+        {
+          "id": "spot-1757910637972",
+          "type": "diamondPlus",
+          "description": "Heal 3",
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilities": [
+            "heal"
+          ]
+        },
+        {
+          "id": "spot-1757910649507",
+          "type": "circle",
+          "description": "Move 3",
+          "region": "bottom",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilities": [
+            "move"
+          ]
+        },
+        {
+          "id": "spot-1757910660365",
+          "type": "diamond",
+          "description": "Negative Effect",
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilities": [
+            "special"
+          ]
+        }
+      ]
+    },
+    "trickster's-reversal": {
+      "name": "Trickster's Reversal",
+      "level": "X",
+      "image": "trickster's-reversal.png",
+      "enhancementSpots": []
+    },
+    "sinister-opportunity": {
+      "name": "Sinister Opportunity",
+      "level": 1,
+      "image": "sinister-opportunity.png",
+      "enhancementSpots": [
+        {
+          "id": "spot-1757910727033",
+          "type": "diamond",
+          "description": "Attack 3",
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilities": [
+            "attack"
+          ]
+        }
+      ]
+    },
+    "smoke-bomb": {
+      "name": "Smoke Bomb",
+      "level": 1,
+      "image": "",
+      "enhancementSpots": [
+        {
+          "id": "spot-1757910745961",
+          "type": "diamondPlus",
+          "description": "Self Effect",
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": false,
+          "abilities": [
+            "special"
+          ]
+        }
+      ]
+    },
+    "backstab": {
+      "name": "Backstab",
+      "level": "X",
+      "image": "backstab.png",
+      "enhancementSpots": [
+        {
+          "id": "spot-1757910773942",
+          "type": "diamond",
+          "description": "Attack 5",
+          "region": "top",
+          "isSummon": false,
+          "targets": 1,
+          "hasLostIcon": true,
+          "abilities": [
+            "attack"
           ]
         }
       ]
