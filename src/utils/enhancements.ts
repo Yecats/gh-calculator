@@ -9,6 +9,13 @@ export const getAvailableEnhancements = (selectedSpot: EnhancementSpot | null) =
   return Object.entries(ENHANCEMENTS).filter(([key, enhancement]) => {
     if (!selectedSpot) return false
     
+    // Special case for Jump: Square marks can only use Jump if it's a non-summon move ability
+    if (key === 'jump') {
+      return selectedSpot.type === 'square' && 
+             selectedSpot.abilities.includes('move') && 
+             !selectedSpot.isSummon
+    }
+    
     // Check if this spot allows this enhancement based on mark type
     if (!enhancement.marks.includes(selectedSpot.type)) return false
     
@@ -102,8 +109,12 @@ export const calculateEnhancementCost = (
   cost += options.existingEnhancements * 75
   
   // 5. Special case for Area-of-Effect Hex
-  if (enhancement.special === 'dividedByHexes' && options.hexCount) {
-    cost = Math.ceil(cost / options.hexCount)
+  if (enhancement.special === 'dividedByHexes') {
+    // Use card's existing hex count, or manual input if no card data
+    const existingHexes = options.selectedCardData?.hexCount || options.hexCount
+    if (existingHexes > 0) {
+      cost = Math.ceil(cost / existingHexes)
+    }
   }
   
   return cost

@@ -111,6 +111,15 @@ function App() {
   const selectedClassData = selectedClass ? classes[selectedClass] : null
   const selectedCardData = selectedClassData && selectedCard ? selectedClassData.cards[selectedCard] : null
 
+  // Update hex count when card changes to use card's default hex count
+  useEffect(() => {
+    if (selectedCardData) {
+      setHexCount(selectedCardData.hexCount || 1)
+    } else {
+      setHexCount(1)
+    }
+  }, [selectedCardData])
+
   // Load saved classes from localStorage on mount (dev mode only)
   useEffect(() => {
     if (isDev) {

@@ -30,6 +30,7 @@ export interface Card {
   level: number | string
   image: string
   enhancementSpots: EnhancementSpot[]
+  hexCount?: number // Number of existing hexes on the card (defaults to 0)
 }
 
 export interface ClassData {

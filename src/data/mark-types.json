@@ -2,21 +2,22 @@
   "square": {
     "name": "Square",
     "restrictions": [
+      "+1 stickers only",
       "Jump sticker if non-summon move"
     ]
   },
   "circle": {
     "name": "Circle",
     "restrictions": [
-      "Any square enhancement",
-      "Any element sticker"
+      "Any square enhancement sticker",
+      "Any element sticker (including wild)"
     ]
   },
   "diamond": {
     "name": "Diamond",
     "restrictions": [
-      "Square/circle enhancements",
-      "Negative condition stickers"
+      "Any square or circle enhancement sticker",
+      "Any negative condition sticker"
     ]
   },
   "diamondPlus": {

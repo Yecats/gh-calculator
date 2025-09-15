@@ -183,7 +183,16 @@ export function CostModifiers({
           {/* Hex Count for Area-of-Effect */}
           {selectedEnhancement === 'areaHex' && (
             <div className="flex items-center justify-between">
-              <Label className="text-sm">Number of existing hexes:</Label>
+              <div className="flex flex-col">
+                <Label className="text-sm">
+                  {selectedCardData?.hexCount ? 'Override hex count:' : 'Number of existing hexes:'}
+                </Label>
+                {selectedCardData?.hexCount && (
+                  <span className="text-xs text-muted-foreground">
+                    Card default: {selectedCardData.hexCount} hexes
+                  </span>
+                )}
+              </div>
               <div className="flex items-center gap-2">
                 <div className="flex items-center gap-1 bg-background/50 rounded-lg border border-border">
                   <Button
